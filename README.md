@@ -16,7 +16,7 @@ Whether you're a music aficionado looking to organize your extensive collection 
 </ul><ul>
 <li>JavaScript</li>
 </ul><h2>Screen shot</h2>
-  <img align="center" width="100%" src="./assets/works/sample.png" alt="srithis-piriya" />
+  <img align="center" width="100%" src="./screenshots/Screenshot.png" alt="srithis-piriya" />
 </ul><h2>Project Status</h2>
 <hr><p>completed</p>
 
