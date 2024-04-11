@@ -1,5 +1,5 @@
 
-<a class="github-button" href="https://spo-tify-clone.freewebhostmost.com/" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" aria-label="Live buttons/github-buttons on GitHub">Watch</a>
+<a class="github-button" href="https://spo-tify-clone.freewebhostmost.com/" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-eye" data-size="large" aria-label="Live buttons/github-buttons on GitHub">Demo</a>
 <h1>Spotify Clone</h1>
 <hr><p>Description :Introducing a dynamic music streaming experience crafted with JavaScript, HTML, CSS, and JSON – your very own Spotify clone. This innovative web application mirrors the functionality of the beloved music platform, but with a twist. Instead of relying on a centralized database, the albums and tracks dynamically populate based on the music files present in the user's system.
 
