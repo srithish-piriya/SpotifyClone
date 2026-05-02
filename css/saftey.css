@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* Navbar */
+.navbar {
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;   /* vertical alignment */
+  gap: 10px;             /* space between image & text */
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.navbar nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Hero */
+.hero img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  padding: 40px;
+  gap: 40px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+}
+
+.sidebar h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Content */
+.content {
+  flex: 1;
+}
+
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.content p {
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .sidebar h1 {
+    font-size: 32px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar h1 {
+    font-size: 28px;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .content h2 {
+    font-size: 24px;
+  }
+
+  .hero img {
+    height: 200px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav {
+    margin-top: 10px;
+  }
+
+  .navbar nav a {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+
+  .sidebar h1 {
+    font-size: 24px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+}/* Footer */
+.footer {
+  background: black;
+  color: white;
+  padding: 50px 40px;
+}
+
+/* Top Section */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+}
+
+/* Columns */
+.footer-links {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column h4 {
+  color: #b3b3b3;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.column a {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.column a:hover {
+  color: #1db954;
+}
+
+/* Social Icons */
+.social {
+  display: flex;
+  gap: 15px;
+}
+
+.social div {
+  background: #222;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #b3b3b3;
+  font-size: 13px;
+  gap: 20px;
+}
+
+.bottom-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #b3b3b3;
+}
+
+.bottom-links a:hover {
+  color: white;
+}
+
+.copyright {
+  text-align: right;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    gap: 30px;
+  }
+
+  .social {
+    margin-top: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .copyright {
+    text-align: left;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.logo:hover {
+  color: #1db954;
+}
