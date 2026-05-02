@@ -27,13 +27,13 @@
     
 
     <!-- Form -->
-    <form>
+    <form onsubmit="login(event)">
 
       <label>Email or username</label>
-      <input type="text" placeholder="Email or username">
+      <input id="email" type="text" placeholder="Email or username">
 
       <label>Password</label>
-      <input type="password" placeholder="Password">
+      <input id="password" type="password" placeholder="Password">
 
       <!-- Remember me -->
       <div class="check">
@@ -43,7 +43,7 @@
         </label>
       </div>
 
-      <button class="login-btn">Log In</button>
+      <button type="submit" class="login-btn">Log In</button>
 
     </form>
     <div class="divider"><span>or</span></div>
@@ -63,6 +63,44 @@
   </div>
 
 </div>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyDg9DTIfT5Tgh26ioI1ZYy3sBSgzkg0HXk",
+  authDomain: "spotify-clone-78a8c.firebaseapp.com",
+  projectId: "spotify-clone-78a8c",
+  storageBucket: "spotify-clone-78a8c.appspot.com",
+  messagingSenderId: "742478344370",
+  appId: "1:742478344370:web:34b342ff1ea347596359ab"
+};
 
+// 2. Initialize FIRST
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+function login(event) {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log("LOGIN SUCCESS");
+            console.log(userCredential.user);
+
+            alert("Login success"); // test
+
+            window.location.href = "../index.html"; // redirect here
+        })
+        .catch((error) => {
+            console.log("LOGIN ERROR:", error.message);
+        });
+}
+
+window.login = login;
+</script>
 </body>
 </html>

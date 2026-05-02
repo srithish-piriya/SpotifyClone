@@ -28,13 +28,13 @@
     <!-- Form -->
     <form>
       <label>Email address</label>
-      <input type="email" placeholder="name@domain.com">
+      <input id="email" type="email" placeholder="name@domain.com">
 
       <label>Password</label>
-      <input type="password" placeholder="Create a password">
+      <input id="password" type="password" placeholder="Create a password">
 
       <label>Profile name</label>
-      <input type="text" placeholder="Your name">
+      <input id="name" type="text" placeholder="Your name">
 
       <label>Date of birth</label>
       <div class="dob">
@@ -70,6 +70,60 @@
   </div>
 
 </div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDg9DTIfT5Tgh26ioI1ZYy3sBSgzkg0HXk",
+  authDomain: "spotify-clone-78a8c.firebaseapp.com",
+  projectId: "spotify-clone-78a8c",
+  storageBucket: "spotify-clone-78a8c.appspot.com",
+  messagingSenderId: "742478344370",
+  appId: "1:742478344370:web:34b342ff1ea347596359ab"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// SIGNUP BUTTON
+document.querySelector(".signup-btn").addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const name = document.getElementById("name").value.trim();
+
+    //  VALIDATION
+    if (!email || !password || !name) {
+        alert("All fields are required!");
+        return;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return;
+    }
+
+    if (!email.includes("@")) {
+        alert("Enter a valid email");
+        return;
+    }
+
+    //  CREATE USER
+    try {
+        await createUserWithEmailAndPassword(auth, email, password);
+
+        alert("Signup successful!");
+
+        // redirect to login page
+        window.location.href = "login.html";
+
+    } catch (error) {
+        alert(error.message);
+    }
+});
+</script>
 </body>
 </html>

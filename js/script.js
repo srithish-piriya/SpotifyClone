@@ -3,7 +3,13 @@ let currentSong = new Audio();
 let Source = new Audio();
 let songs;
 let currFolder;
+function goToPage() {
+    window.location.href = "html/signup.html";
+}
 
+function logIn() {
+    window.location.href = "html/login.html";
+}
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
         return "00:00";
